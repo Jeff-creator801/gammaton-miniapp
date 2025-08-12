@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>GammaTon MiniApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <!-- TON Connect UI -->
+  <script src="https://unpkg.com/@tonconnect/ui"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="main-app">
+    <!-- ВЕРХНИЙ БАР -->
+    <div class="top-bar">
+      <div class="top-left">
+        <button class="circle-btn" id="energy-roulette-btn" title="Рулетка энергии">
+          ⚡️
+        </button>
+        <button class="circle-btn" id="luck-roulette-btn" title="Рулетка удачи">
+          🍀
+        </button>
+      </div>
+      <div class="top-right">
+        <button class="circle-btn" id="premium-btn" title="Премиум">
+          💎
+        </button>
+      </div>
+    </div>
+    <!-- КНОПКА TON CONNECT -->
+    <div style="text-align:center;margin:16px 0;">
+      <button id="ton-connect-btn" class="nav-btn">Подключить TON кошелёк</button>
+      <div id="ton-wallet-address" style="font-size:0.95em;color:#1581c8;"></div>
+    </div>
+    <!-- БАЛАНС -->
+    <div class="balance-panel">
+      <span id="energy-balance">Энергия: 0</span>
+      <span id="gamma-balance">Gamma Coin: 0</span>
+      <span id="ton-balance">Ton: 0</span>
+      <span id="premium-status"></span>
+    </div>
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <div id="content-area"></div>
+    <!-- НИЖНИЙ НАВИГАЦИОННЫЙ БАР -->
+    <div class="bottom-nav">
+      <button class="nav-btn" id="events-btn">Ивенты</button>
+      <button class="nav-btn" id="shop-btn">Магазин</button>
+      <button class="nav-btn main-btn" id="city-btn">Город</button>
+      <button class="nav-btn" id="leaderboard-btn">Лидерборд</button>
+      <button class="nav-btn" id="exchange-btn">Обмен</button>
+    </div>
+  </div>
+  <!-- МОДАЛЬНОЕ ОКНО -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content" id="modal-content"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+          </html>
