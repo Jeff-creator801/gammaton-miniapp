@@ -1,0 +1,202 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #e3f4fe 0%, #a5d5f8 100%);
+  min-height: 100vh;
+}
+#main-app {
+  max-width: 480px;
+  margin: auto;
+  box-shadow: 0 0 16px #67b6f7b0;
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+}
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 14px 0 14px;
+}
+.top-left, .top-right {
+  display: flex;
+  gap: 10px;
+}
+.circle-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #eaf7ff;
+  box-shadow: 0 2px 8px #b7e2ffa1;
+  font-size: 1.5em;
+  transition: background 0.23s;
+  cursor: pointer;
+}
+.circle-btn:hover {
+  background: #c2e3ff;
+}
+.balance-panel {
+  background: #eaf7ff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 7px 17px;
+  font-size: 1.1em;
+  color: #1581c8;
+  border-bottom: 1.5px solid #b7e2ff;
+}
+#premium-status {
+  color: #ffb600;
+  font-weight: bold;
+}
+#content-area {
+  min-height: 320px;
+  padding: 17px;
+  transition: opacity 0.33s;
+}
+.bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  background: #eaf7ff;
+  border-top: 1.5px solid #b7e2ff;
+  padding: 9px 0;
+}
+.nav-btn, .main-btn {
+  flex: 1;
+  margin: 0 4px;
+  background: #eaf7ff;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.07em;
+  padding: 10px 0;
+  color: #1581c8;
+  cursor: pointer;
+  transition: background 0.22s, box-shadow 0.22s;
+}
+.nav-btn:hover, .main-btn:hover {
+  background: #c2e3ff;
+  box-shadow: 0 3px 10px #b7e2ff66;
+}
+.main-btn {
+  font-weight: bold;
+  color: #0076d1;
+  background: #dbeeff;
+  border: 2px solid #1581c8;
+  box-shadow: 0 2px 10px #b7e2ffb0;
+}
+/* Модальное окно */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: #00000077;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  opacity: 1;
+  transition: opacity 0.33s;
+}
+.modal.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal-content {
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  max-width: 340px;
+  min-width: 220px;
+  box-shadow: 0 4px 32px #67b6f7b0;
+  position: relative;
+  text-align: center;
+  animation: modalIn 0.5s;
+}
+@keyframes modalIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+/* Анимации переходов */
+.fade-out { opacity: 0; transition: opacity 0.33s; }
+.fade-in { opacity: 1; transition: opacity 0.33s; }
+.shop-building {
+  display: flex; align-items: center; margin-bottom: 18px;
+}
+.shop-building img {
+  width: 48px; height: 48px; border-radius: 9px; margin-right: 16px;
+  object-fit: cover; background: #eee;
+}
+.shop-building .info {
+  flex: 1;
+}
+.shop-building .buy-btn {
+  background: #1581c8;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  padding: 7px 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.22s;
+}
+.shop-building .buy-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+.level-up-btn {
+  background: #ffb600;
+  color: #2d2d2d;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin-top: 7px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.22s;
+}
+.level-up-btn:disabled {
+  background: #eee;
+  color: #aaa;
+  cursor: not-allowed;
+}
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 13px;
+}
+.leaderboard-table th, .leaderboard-table td {
+  padding: 8px;
+  border-bottom: 1px solid #eaf7ff;
+  text-align: left;
+}
+.leaderboard-table th {
+  background: #eaf7ff;
+  color: #1581c8;
+}
+.leaderboard-table td {
+  background: #f6fbff;
+}
+.exchange-section input,
+.exchange-section select {
+  padding: 7px 10px;
+  margin-bottom: 8px;
+  border-radius: 7px;
+  border: 1px solid #b7e2ff;
+  width: 90%;
+  font-size: 1em;
+}
+.exchange-section button {
+  background: #1581c8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 6px;
+}
+.exchange-section button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
